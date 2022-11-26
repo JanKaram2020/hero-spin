@@ -24,7 +24,7 @@ const ColorModeToggle = () => {
       borderRadius="30px"
       overflow="hidden"
     >
-      <Image src="cap-vs-tony.jpg" gridArea="1 / 1 / 2 / 3" zIndex={1} />
+      <Image src="/cap-vs-tony.jpg" gridArea="1 / 1 / 2 / 3" zIndex={1} />
       <MotionBox
         zIndex={2}
         gridArea={isDark ? '1 / 1 / 2 / 2' : '1 / 2 / 2 / 3'}
