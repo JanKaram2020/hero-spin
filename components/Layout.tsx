@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           },
         }}
       >
-        <Box as="main" px="1vw" mt="1vh">
+        <Box as="main" px="1vw" my="5vh">
           {children}
         </Box>
       </motion.div>
