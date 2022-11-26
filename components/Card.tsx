@@ -36,7 +36,26 @@ const Card = ({
   whileHover,
   whileTap,
 }: CardInterface) => (
-  <MotionCard whileHover={whileHover} whileTap={whileTap} maxW="sm">
+  <MotionCard
+    whileHover={whileHover}
+    whileTap={whileTap}
+    maxW="sm"
+    initial="hidden"
+    animate="visible"
+    variants={{
+      hidden: {
+        scale: 0.8,
+        opacity: 0,
+      },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+          delay: 0.4,
+        },
+      },
+    }}
+  >
     <CardBody>
       <Center>
         <Image
