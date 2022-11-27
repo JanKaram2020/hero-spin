@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Movie } from 'types';
+import { Movie, RandomMovie } from 'types';
 import getMovie from 'api/getMovie';
 import getRandomElement from 'utils/getRandomELement';
 import getMovieDetails from 'api/getMovieDetails';
@@ -26,8 +26,12 @@ const UseGetRandomMovie = (name?: string | string[] | undefined) => {
     data: details,
     error: detailsError,
     isLoading: detailsLoading,
-  } = useQuery(['imdbId', randomMovie?.imdbID], () =>
-    getMovieDetails(randomMovie?.imdbID)
+  } = useQuery(
+    ['imdbId', randomMovie?.imdbID],
+    () => getMovieDetails(randomMovie?.imdbID),
+    {
+      refetchOnWindowFocus: false,
+    }
   );
   const changeMovie = () => setMovie(getRandomElement(heroesNames));
 
@@ -41,7 +45,7 @@ const UseGetRandomMovie = (name?: string | string[] | undefined) => {
     randomMovie: {
       ...randomMovie,
       ...details,
-    },
+    } as RandomMovie,
     changeMovie,
   };
 };

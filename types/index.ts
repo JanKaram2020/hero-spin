@@ -25,3 +25,4 @@ interface MovieFail {
 }
 export type MovieRes = MovieSuccess | MovieFail;
 export type MovieDetailsRes = MovieDetails | undefined;
+export type RandomMovie = (Movie | undefined) & (MovieDetails | undefined);
