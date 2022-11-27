@@ -90,7 +90,7 @@ const IndexPage = () => {
               <Box>
                 <Text>Rating{randomMovie?.Ratings?.length > 1 ? 's' : ''}</Text>
                 {randomMovie?.Ratings?.map((r) => (
-                  <Text>
+                  <Text key={r.Source}>
                     {r.Source} : {r.Value}
                   </Text>
                 ))}
